@@ -1,46 +1,51 @@
-import logo from "./logo.svg";
 import "./App.scss";
 import { useEffect, useState } from "react";
+import { Switch, Route, Link } from "react-router-dom";
 
-import A from "./templates/A";
-import B from "./templates/B";
+import { config } from "./config.js";
+
+import Set from "./components/Set";
 
 function App() {
-	const config = {
-		url: "http://localhost:3000/posts?name=spring-2021",
-	};
+	// Handle sets
 
-	const [posts, setPosts] = useState();
+	const [sets, setSets] = useState();
 
-	const getPosts = async () => {
-		const posts = await fetch(config.url, {
+	const getSets = async () => {
+		const sets = await fetch(config.apiUrl, {
 			method: "GET",
 		})
 			.then((response) => response.json())
 			.then((data) => {
 				return data;
 			});
-
-		return posts;
+		return sets;
 	};
 
 	useEffect(() => {
-		getPosts().then((data) => setPosts(data));
-	}, [setPosts]);
+		getSets().then((data) => setSets(data));
+	}, []);
 
 	return (
-		<div className="container">
-			<div className="grid">
-				{posts
-					? posts.map((post, index) =>
-							post.template === "A" ? (
-								<A key={index} post={post} />
-							) : post.template === "B" ? (
-								<B key={index} post={post} />
-							) : null
-					  )
-					: null}
-			</div>
+		<div className="app">
+			<Link to="/">Home</Link>
+			<Switch>
+				<Route exact path="/">
+					<h1>sets</h1>
+					<ul>
+						{sets
+							? sets.map((set, index) => (
+									<li key={index}>
+										<Link to={`/${set.key}`}>{set.key}</Link>
+									</li>
+							  ))
+							: null}
+					</ul>
+				</Route>
+				<Route path="/:setKey">
+					<Set />
+				</Route>
+			</Switch>
 		</div>
 	);
 }

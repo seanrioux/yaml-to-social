@@ -1,0 +1,40 @@
+- template: a
+  keyword: Goal
+  goal: Be organized
+  background: white
+- template: a
+  keyword: Goal
+  goal: Be bold
+  background: gold
+- template: a
+  keyword: Goal
+  goal: Be fun
+  background: white
+- template: a
+  keyword: Goal
+  goal: Be different
+  background: gold
+- template: a
+  keyword: Goal
+  goal: Be interested
+  background: white
+- template: a
+  keyword: Goal
+  goal: Be humble
+  background: gold
+- template: a
+  keyword: Goal
+  goal: Be artistic
+  background: white
+- template: a
+  keyword: Goal
+  goal: Be creative
+  background: gold
+- template: a
+  keyword: Goal
+  goal: Be smart
+  background: white
+- template: a
+  keyword: Topic
+  goal: Be greatness
+  background: gold

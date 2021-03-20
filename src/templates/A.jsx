@@ -1,13 +1,9 @@
 const A = ({ post }) => {
-	const postKeys = Object.keys(post);
-
 	return (
-		<article className="template-a">
-			<section>
-				<blockquote>{post.blockquote}</blockquote>
-				<small>{post.small}</small>
-			</section>
-		</article>
+		<section>
+			<small>{post.keyword}</small>
+			<h1>{post.goal}</h1>
+		</section>
 	);
 };
 

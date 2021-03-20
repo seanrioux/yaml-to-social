@@ -1,7 +1,6 @@
 .template-a {
-  background: $beige;
-  color: $darkRed;    
-  text-align: center;
+
+  text-align: left;
   padding: 7rem;
   blockquote {
     font-weight: 600;
@@ -9,7 +8,26 @@
     padding-top: 2rem;
     padding-bottom: 2rem;
   }
-  section {
-    border: solid 4px $burntOrange;
+  small {
+    font-weight: bold;
+  }
+  h1 { 
+    font-size: 8rem;
+    line-height: 8rem;
+  }
+  &.gold {
+  
+    background: $gold;
+    color: $white;    
+    h1 {
+      color: $black;
+    }
+  }
+  &.white {
+    background: $white;
+    color: $black;
+    small {
+      color: $gold;
+    }
   }
 }
