@@ -1,33 +1,54 @@
-.template-a {
-
-  text-align: left;
-  padding: 7rem;
-  blockquote {
-    font-weight: 600;
-    font-size: 2.8rem;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-  }
-  small {
-    font-weight: bold;
-  }
-  h1 { 
-    font-size: 8rem;
-    line-height: 8rem;
-  }
-  &.gold {
-  
-    background: $gold;
-    color: $white;    
-    h1 {
-      color: $black;
+@mixin template-a($white, $black, $primary, $serif) {
+    font-family: $serif;
+    text-align: left;
+    padding: 7rem;
+    blockquote {
+      font-weight: 600;
+      font-size: 2.8rem;
+      padding-top: 2rem;
+      padding-bottom: 2rem;
     }
-  }
-  &.white {
-    background: $white;
-    color: $black;
     small {
-      color: $gold;
+      font-weight: bold;
+    }
+    h1 { 
+      font-size: 8rem;
+      line-height: 8rem;
+    }
+    p {
+      margin-top: 2rem;
+      margin-bottom: 2rem; 
+      font-size: 3rem;
+     }
+    &.primary {
+  
+      background: $primary;
+      color: $white;    
+      h1 {
+        color: $black;
+      }
+    }
+    &.white {
+      background: $white;
+      color: $black;
+      small {
+        color: $primary;
+      }
+    }
+    &.height-1920 {
+      p {
+        font-size: 3rem;
+      }
     }
   }
+
+// Call template a mixin for becomist
+.becomist.template-a {
+  @include template-a(
+    $becomist-black, 
+    $becomist-white, 
+    $becomist-primary, 
+    $becomist-font-serif
+  );
 }
+

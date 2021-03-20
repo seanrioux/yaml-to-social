@@ -1,40 +1,64 @@
-- template: a
-  keyword: Goal
-  goal: Be organized
-  background: white
-- template: a
-  keyword: Goal
-  goal: Be bold
-  background: gold
-- template: a
-  keyword: Goal
-  goal: Be fun
-  background: white
-- template: a
-  keyword: Goal
-  goal: Be different
-  background: gold
-- template: a
-  keyword: Goal
-  goal: Be interested
-  background: white
-- template: a
-  keyword: Goal
-  goal: Be humble
-  background: gold
-- template: a
-  keyword: Goal
-  goal: Be artistic
-  background: white
-- template: a
-  keyword: Goal
-  goal: Be creative
-  background: gold
-- template: a
-  keyword: Goal
-  goal: Be smart
-  background: white
-- template: a
-  keyword: Topic
-  goal: Be greatness
-  background: gold
+key: becomist
+posts:
+  # Be Organized
+  - template: a
+    keyword: Goal
+    goal: Be organized
+    background: white
+
+  - template: a
+    keyword: Key Indicator
+    goal: Meet a schedule
+    summary: Meeting on time, whether by well managed calendar or merely good timing, is a key indicator you are organized.
+    background: primary
+
+  - template: a
+    keyword: Key Indicator
+    goal: Complete tasks
+    summary: Do you complete all task you set out to? Of course not. But setting out, simply having a list of things to do in any form, is organized.
+    background: primary
+
+  - template: a
+    keyword: Key Indicator
+    goal: Keep things sorted
+    summary: Knowing where things are. Putting things away. If you're organized, your space reflects this.
+    background: primary
+
+  # Be bold
+  - template: a
+    keyword: Goal
+    goal: Be bold
+    background: primary
+
+  - template: a
+    keyword: Goal
+    goal: Be fun
+    background: white
+  - template: a
+    keyword: Goal
+    goal: Be different
+    background: primary
+  - template: a
+    keyword: Goal
+    goal: Be interested
+    background: white
+  - template: a
+    keyword: Goal
+    goal: Be humble
+    background: primary
+  - template: a
+    keyword: Goal
+    goal: Be artistic
+    background: white
+  - template: a
+    keyword: Goal
+    goal: Be creative
+    background: primary
+  - template: a
+    keyword: Goal
+    goal: Be smart
+    background: white
+  - template: a
+    keyword: Topic
+    goal: Be greatness
+    background: primary

@@ -1,8 +1,14 @@
 import { templates } from "../templates";
 
-const Post = ({ post, width, height }) => {
+const Post = ({ post, width, height, setKey }) => {
 	const Template = templates.find((template) => (template.key = post.template));
-	const articleClass = [post.background, "template-" + post.template];
+	const articleClass = [
+		setKey,
+		"template-" + post.template,
+		post.background,
+		`width-${width}`,
+		`height-${height}`,
+	];
 
 	const style = {
 		width: `${width}px`,

@@ -11,14 +11,17 @@ function useQuery() {
 
 const Set = () => {
 	let { setKey } = useParams();
-	let query = useQuery();
 
 	// Handle posts
+	const [set, setSet] = useState();
 
-	const [posts, setPosts] = useState();
+	// Use query
+	let query = useQuery();
+
 	const width = query.get("width");
 	const height = query.get("height");
 
+	// Get posts
 	const getPosts = async () => {
 		const posts = await fetch(`${config.apiUrl}/posts?key=${setKey}`, {
 			method: "GET",
@@ -34,25 +37,18 @@ const Set = () => {
 		return posts;
 	};
 
+	// Get render
 	const getRender = (key) => {
 		fetch(
-			`${config.apiUrl}/render?key=${key}&width=${width}&height=${height}`,
-			{
-				method: "GET",
-			}
-		)
-			.then((response) => response.json())
-			.then((data) => {
-				return data;
-			})
-			.catch((error) => {
-				console.log(error);
-			});
+			`${config.apiUrl}/render?key=${key}&width=${width}&height=${height}`
+		).catch((error) => {
+			console.log(error);
+		});
 	};
 
 	useEffect(() => {
 		if (setKey) {
-			getPosts(setKey).then((data) => setPosts(data));
+			getPosts(setKey).then((data) => setSet(data));
 		}
 	}, []);
 
@@ -71,9 +67,15 @@ const Set = () => {
 			<button onClick={() => getRender(setKey)}>Render</button>
 			<div className="container">
 				<div className="grid">
-					{posts
-						? posts.map((post, index) => (
-								<Post key={index} post={post} width={width} height={height} />
+					{set
+						? set.posts.map((post, index) => (
+								<Post
+									setKey={set.key}
+									key={index}
+									post={post}
+									width={width}
+									height={height}
+								/>
 						  ))
 						: null}
 				</div>
